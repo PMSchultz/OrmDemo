@@ -9,6 +9,7 @@ import com.j256.ormlite.table.TableUtils;
 import edu.cnm.deepdive.demo.ormdemo.entities.Absence;
 import edu.cnm.deepdive.demo.ormdemo.entities.Student;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.Date;
 
 public class OrmHelper extends OrmLiteSqliteOpenHelper {
@@ -61,6 +62,7 @@ public class OrmHelper extends OrmLiteSqliteOpenHelper {
   }
 
   private void populateDatabase() throws SQLException {
+    Calendar calendar = Calendar.getInstance();
     {
       Student student = new Student();
       student.setName("Mortimer Snerd");
@@ -73,7 +75,8 @@ public class OrmHelper extends OrmLiteSqliteOpenHelper {
 
       absence = new Absence();
       absence.setStudent(student);
-      absence.setDate(new Date(2017, 10, 31));
+      calendar.set(2017, 9, 31);
+      absence.setDate(calendar.getTime());
       absence.setExcused(true);
       getAbsenceDao().create(absence);
     }
