@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">OrmDemo</string>
+  <string name="title_student_detail">Student Detail</string>
+  <string name="student_id_label">Number</string>
+  <string name="student_name_label">Name</string>
+  <string name="student_created_label">Created</string>
+  <string name="student_absences_label">Absences</string>
+</resources>
